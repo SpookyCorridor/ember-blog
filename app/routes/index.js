@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model: function() {
-        return {}; 
+        return this.store.findQuery('post', {sort: 'asc'}); 
     },
     
     actions: {
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
                 })
                 .catch(e => {
                     console.log(e.errors);
-                });; 
+                }); 
         }
     }
 });
